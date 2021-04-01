@@ -1,21 +1,22 @@
 'use strict';
 
-function resultFun(x) {
-  const positionLeft = x.clientX;
-  const positionTop = x.clientY;
+const vertical = document.querySelector('.vertical');
+const horizontal = document.querySelector('.horizontal');
+const target = document.querySelector('.target');
+const tag = document.querySelector('.tag');
 
-  document.getElementById('result').style.left = positionLeft - 10 + 'px';
-  document.getElementById('result').style.top = positionTop - 10 + 'px';
-}
+document.addEventListener('mousemove', (event) => {
+  const x = event.clientX;
+  const y = event.clientY;
+  console.log(`${x}, ${y}`);
 
-if (document.addEventListener) {
-  document.addEventListener('mouseover', resultFun);
-}
+  vertical.style.left = `${x}px`;
+  horizontal.style.top = `${y}px`;
+  target.style.left = `${x}px`;
+  target.style.top = `${y}px`;
+  tag.style.left = `${x}px`;
+  tag.style.top = `${y}px`;
 
-// const mouseOver = document.querySelector('body');
-// function drag() {
-//   const rect = mouseOver.getBoundingClientRect();
-//   console.log(rect);
-// }
+  tag.innerHTML = `${x}px, ${y}px`;
 
-// mouseOver.addEventListener('mouseover', (event) => {});
+});
