@@ -1,0 +1,16 @@
+body {
+  background-color: black;
+}
+
+html {
+  cursor: url(img/target.png), auto;
+}
+
+#result {
+  position: absolute;
+  background: #000;
+  width: 30px;
+  height: 30px;
+  opacity: 0.4;
+  border-radius: 100%;
+}
