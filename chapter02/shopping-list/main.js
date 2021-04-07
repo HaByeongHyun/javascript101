@@ -36,9 +36,6 @@ function createItem(text) {
   const deleteBtn = document.createElement('button');
   deleteBtn.setAttribute('class', 'item__delete');
   deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
-  deleteBtn.addEventListener('click', () => {
-    items.removeChild(itemRow);
-  });
 
   const itemDivider = document.createElement('div');
   itemDivider.setAttribute('class', 'item__divider');
@@ -48,15 +45,16 @@ function createItem(text) {
 
   itemRow.appendChild(item);
   itemRow.appendChild(itemDivider);
+
   return itemRow;
 }
 
-addBtn.addEventListener('click', () => {
-  onAdd();
-});
-
-input.addEventListener('keypress', (event) => {
+addBtn.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
     onAdd();
   }
+});
+
+addBtn.addEventListener('click', () => {
+  onAdd();
 });
